@@ -78,8 +78,8 @@ button{
     grid-template-rows: 70px 1fr 50px 1fr;
     grid-template-areas: 
     " question question  "
-    " input button  "
-    "   .  ."
+    " input input  "
+    "  button button"
     " message message";
     gap: 3px;
     
