@@ -1,19 +1,50 @@
-let userinput;
+const checkButtons = document.getElementsByClassName("check")
+const entryFields = document.getElementsByClassName("entry")
+const messageOnEntry = document.getElementsByClassName("message")
+console.log(entryFields)
+const entryQandA = {
+    entryCard_1:
+        {
+        Question:"おはよう",
+        id:0,
+        userAnswer:entryFields[0],
+        messageBox:messageOnEntry[0]
+        }
+    ,
+    entryCard_2:
+    {
+        Question:"にほん",
+        id:1,
+        userAnswer:entryFields[1],
+        messageBox:messageOnEntry[1]
+    }
+    
+};
 
-document.getElementById("check").onclick = function(){
-    userinput = document.getElementById("matching").value;
-    if(userinput==='おはよう'){
+console.log(entryQandA)
+function onCheckClick(){
+    const parentID = $(this).parent().attr('id');
+    const domParent = document.getElementById(parentID)
+    console.log(parentID)
+    let userinput = entryQandA[parentID].userAnswer.value;
+    console.log(userinput)
+    console.log(entryQandA[parentID].Question)
+    if(userinput.trim()===entryQandA[parentID].Question){
         console.log('Correct answer!')
-        document.getElementById('message').innerHTML = 'إجابة صحيحة!'
-        document.getElementById('matching').classList.remove('wrong')
-        document.getElementById('matching').classList.add('correct')
-        document.getElementById('matching').setAttribute( "disabled", "true" );
+        entryQandA[parentID].messageBox.innerHTML = 'إجابة صحيحة!'
+        entryQandA[parentID].userAnswer.classList.remove('wrong')
+        entryQandA[parentID].userAnswer.classList.add('correct')
+        entryQandA[parentID].userAnswer.setAttribute( "disabled", "true" );
         
     }else{
         console.log('Try again')
-        document.getElementById('message').innerHTML = '..حاول مرة أخرى'
-        document.getElementById('matching').classList.add('wrong')
+        entryQandA[parentID].messageBox.innerHTML = '..حاول مرة أخرى'
+        entryQandA[parentID].userAnswer.classList.add('wrong')
     }
     
 }
 
+for(let i = 0; i < checkButtons.length; i++){
+    checkButtons[i]
+    .addEventListener("click",onCheckClick);
+}
