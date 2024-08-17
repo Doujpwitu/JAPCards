@@ -3,11 +3,11 @@ const entryFields = document.getElementsByClassName("entry")
 const messageOnEntry = document.getElementsByClassName("message")
 const entryQandA = {
     entryCard_1:
-        {
+    {
         Question:"おはよう",
         userAnswer:entryFields[0],
         messageBox:messageOnEntry[0]
-        }
+    }
     ,
     entryCard_2:
     {
@@ -24,9 +24,17 @@ const entryQandA = {
     
 };
 
+// add event listener to every button with oncheckClick
+
+for(let i = 0; i < checkButtons.length; i++){
+    checkButtons[i]
+    .addEventListener("click",
+        onCheckClick
+    );
+}
+
 function onCheckClick(){
     const parentID = $(this).parent().attr('id');
-    const domParent = document.getElementById(parentID)
     let userinput = entryQandA[parentID].userAnswer.value;
     if(userinput.trim()===entryQandA[parentID].Question){
         entryQandA[parentID].messageBox.innerHTML = 'إجابة صحيحة!'
@@ -40,7 +48,7 @@ function onCheckClick(){
     }
     
 }
-for(let i = 0; i < checkButtons.length; i++){
-    checkButtons[i]
-    .addEventListener("click",onCheckClick);
-}
+
+
+
+
