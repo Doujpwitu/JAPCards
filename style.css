@@ -128,3 +128,26 @@ p{
     direction: rtl;
     padding:20px;
 }
+
+
+
+.u{
+    animation-name: rotateme;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+   
+    
+   
+}
+
+
+
+@keyframes rotateme{
+    from{
+        transform : rotate(0deg);
+    }
+    50%,100%{
+        transform: rotate(-90deg);
+    }
+}
