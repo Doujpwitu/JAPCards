@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <title>My quiz</title>
+</head>
+<body>
+    <div class="app">
+        <div class="quiz">
+            <p id="question">Question goes here</p>
+            <div id="answer-buttons">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+            </div>
+        <button id="next-btn">التالي</button>
+        </div>
+    </div>
+    <script>
+        var questions = [
+         {
+             question: "الحرف あ بالروماجي هو ..",
+             answers: [
+                 { text: "i", correct:false},
+                 { text: "a", correct:true},
+                 { text: "u", correct:false},
+                 { text: "e", correct:false}
+             ]
+         },
+         {
+             question: "الحرف い بالروماجي هو ..",
+             answers: [
+                 { text: "a", correct:false},
+                 { text: "u", correct:false},
+                 { text: "i", correct:true},
+                 { text: "e", correct:false}
+             ]
+         },
+         {
+             question: "الحرف え بالروماجي هو ..",
+             answers: [
+                 { text: "a", correct:false},
+                 { text: "u", correct:false},
+                 { text: "i", correct:false},
+                 { text: "e", correct:true}
+             ]
+         }
+     ]
+     </script>
+     <script src="quiz.js"></script>
+</body>
+</html>
